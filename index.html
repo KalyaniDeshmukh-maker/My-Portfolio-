@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalyani Deshmukh — CSE (Data Science) Portfolio & ResuMind AI</title>
+  <meta name="description" content="Portfolio of Kalyani Vilas Deshmukh — B.Tech CSE (Data Science) student at RCPIT. Features ResuMind AI, IoT Dashboard, and more." />
+  <meta name="author" content="Kalyani Vilas Deshmukh" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+
+  <!-- Ambient background glow -->
+  <div class="ambient-glow"></div>
+
+  <!-- ────────────────────── NAVBAR ────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container nav-content">
+      <!-- Brand -->
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">K</div>
+        <span>Kalyani Deshmukh</span>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="nav-links" role="tablist">
+        <button class="nav-btn active" data-tab="portfolio" role="tab" aria-selected="true" id="tab-portfolio">
+          🏠 Portfolio
+        </button>
+        <button class="nav-btn" data-tab="tool" role="tab" aria-selected="false" id="tab-tool">
+          🤖 ResuMind AI
+        </button>
+        <button class="nav-btn" data-tab="resume" role="tab" aria-selected="false" id="tab-resume">
+          📄 ATS Resume
+        </button>
+      </div>
+
+      <!-- Theme Toggle & CTA -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle light/dark mode">
+          <span id="theme-icon">☀️</span>
+        </button>
+        <a href="https://github.com/KalyaniDeshmukh-maker" target="_blank" rel="noopener noreferrer" class="secondary-btn" style="text-decoration:none; padding: 7px 14px; font-size:0.85rem;">
+          GitHub ↗
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ────────────────────── PORTFOLIO PANEL ────────────────────── -->
+  <div class="tab-panel active" id="panel-portfolio" role="tabpanel" aria-labelledby="tab-portfolio">
+    <div class="container">
+
+      <!-- Hero -->
+      <section class="hero" aria-label="About me">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-tag">
+              <span>🎓</span> RCPIT Shirpur — CSE (Data Science) 2026
+            </div>
+            <h1>Hi, I'm <span class="gradient-text">Kalyani</span><br />Vilas Deshmukh</h1>
+            <p class="hero-subtitle">B.Tech CSE Student · Full-Stack Web Developer · Data Science Enthusiast</p>
+            <p class="hero-bio">
+              I build modern, data-driven web applications and AI-powered tools. Passionate about bridging <strong>Machine Learning, responsive frontend engineering</strong>, and real-world user experience design. Currently in my third year at RCPIT Shirpur.
+            </p>
+
+            <div class="hero-stats" aria-label="Quick stats">
+              <div class="stat-box">
+                <span class="stat-number">7.12</span>
+                <span class="stat-label">CGPA</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">3+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-box">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+            </div>
+
+            <div class="hero-cta-group">
+              <button class="primary-btn" data-tab="tool" id="open-tool-cta">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Try ResuMind AI Live
+              </button>
+              <a href="./resume/resume_print.html" target="_blank" class="secondary-btn">
+                <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                View Full Resume (PDF)
+              </a>
+              <a href="https://linkedin.com/in/kalyani-deshmukh-457031313" target="_blank" rel="noopener noreferrer" class="secondary-btn" style="text-decoration:none">
+                🔗 LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <!-- Profile Card -->
+          <div class="profile-card" aria-label="Profile card">
+            <div class="profile-avatar-wrapper">
+              <div class="avatar-sphere" aria-label="Avatar initials KD">KD</div>
+            </div>
+            <div class="profile-name">Kalyani V. Deshmukh</div>
+            <div class="profile-role">CSE (Data Science) Undergrad</div>
+            <ul class="profile-info-list">
+              <li class="profile-info-item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Shirpur, Maharashtra, India
+              </li>
+              <li class="profile-info-item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                <a href="mailto:kalyanid532@gmail.com">kalyanid532@gmail.com</a>
+              </li>
+              <li class="profile-info-item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                +91 8446037591
+              </li>
+              <li class="profile-info-item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                <a href="https://linkedin.com/in/kalyani-deshmukh-457031313" target="_blank">LinkedIn Profile</a>
+              </li>
+              <li class="profile-info-item">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                <a href="https://github.com/KalyaniDeshmukh-maker" target="_blank">GitHub Portfolio</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section aria-label="Projects" style="margin-bottom: 48px;">
+        <div class="section-header">
+          <span class="section-tag">Portfolio</span>
+          <h2>Key Projects</h2>
+          <p class="section-desc">Real-world applications demonstrating full-stack engineering, data science, and IoT systems.</p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: ResuMind AI (Flagship) -->
+          <div class="project-card">
+            <div class="project-badge-featured">⭐ Flagship</div>
+            <div class="project-icon-box" aria-hidden="true">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="project-title">ResuMind AI</h3>
+            <p class="project-desc">An intelligent, real-time Resume & Skill Gap Analyzer. Computes ATS compatibility scores, identifies missing keywords, and generates STAR-method bullet points using a modular JavaScript architecture engineered with <strong>Google Antigravity IDE</strong>.</p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">JavaScript ES6+</span>
+              <span class="tech-tag">Modern CSS3</span>
+              <span class="tech-tag">Chart.js</span>
+              <span class="tech-tag">REST API Design</span>
+              <span class="tech-tag">Antigravity IDE</span>
+              <span class="tech-tag">Glassmorphism</span>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-link-btn" data-tab="tool" id="launch-tool-btn">
+                🚀 Launch Live Demo →
+              </button>
+              <span style="font-size:0.8rem; color: var(--text-muted);">2024</span>
+            </div>
+          </div>
+
+          <!-- Project 2: IoT Dashboard -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
+            </div>
+            <h3 class="project-title">Smart IoT Environmental Monitor</h3>
+            <p class="project-desc">ESP32-powered environmental telemetry node with multi-sensor data capture (temperature, humidity) streamed to a browser-based real-time analytics dashboard with live trend charts and threshold alerts.</p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">ESP32 / Arduino</span>
+              <span class="tech-tag">C/C++</span>
+              <span class="tech-tag">HTML5 / CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">IoT</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/KalyaniDeshmukh-maker" target="_blank" class="project-link-btn" style="text-decoration:none">
+                GitHub Repository →
+              </a>
+              <span style="font-size:0.8rem; color: var(--text-muted);">2024</span>
+            </div>
+          </div>
+
+          <!-- Project 3: Number Game -->
+          <div class="project-card">
+            <div class="project-icon-box" aria-hidden="true">
+              <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+            </div>
+            <h3 class="project-title">Number Guessing Game</h3>
+            <p class="project-desc">A legacy C terminal game ported into a polished, responsive web application. Features glassmorphic dark-mode UI, robust multi-type input validation, hint progression system, and animated score states — all without external libraries.</p>
+            <div class="project-tech-stack">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">Vanilla JavaScript</span>
+              <span class="tech-tag">Glassmorphism UI</span>
+            </div>
+            <div class="project-card-footer">
+              <a href="https://github.com/KalyaniDeshmukh-maker" target="_blank" class="project-link-btn" style="text-decoration:none">
+                GitHub Repository →
+              </a>
+              <span style="font-size:0.8rem; color: var(--text-muted);">2023</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Technical Skills -->
+      <section aria-label="Technical skills" style="margin-bottom: 48px;">
+        <div class="section-header">
+          <span class="section-tag">Competencies</span>
+          <h2>Technical Skills</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-category-card">
+            <h3>
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              Programming Languages
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Python</span>
+              <span class="skill-pill">JavaScript ES6+</span>
+              <span class="skill-pill">C / C++</span>
+              <span class="skill-pill">SQL</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <h3>
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              Web & Frontend
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">HTML5 / CSS3</span>
+              <span class="skill-pill">Responsive Design</span>
+              <span class="skill-pill">Glassmorphism UI</span>
+              <span class="skill-pill">REST API Integration</span>
+              <span class="skill-pill">Antigravity IDE</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <h3>
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+              Data Science & AI
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">NumPy / Pandas</span>
+              <span class="skill-pill">Scikit-Learn Basics</span>
+              <span class="skill-pill">Matplotlib</span>
+              <span class="skill-pill">Chart.js</span>
+              <span class="skill-pill">EDA</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <h3>
+              <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Tools & Platforms
+            </h3>
+            <div class="skill-pill-list">
+              <span class="skill-pill">Git / GitHub</span>
+              <span class="skill-pill">VS Code</span>
+              <span class="skill-pill">Arduino IDE</span>
+              <span class="skill-pill">ESP32</span>
+              <span class="skill-pill">Chrome DevTools</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education & Activities -->
+      <section aria-label="Education and activities" style="margin-bottom: 48px;">
+        <div class="section-header">
+          <span class="section-tag">Background</span>
+          <h2>Education & Activities</h2>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-item">
+            <div class="timeline-title">R. C. Patel Institute of Technology, Shirpur</div>
+            <div class="timeline-meta">B.Tech — CSE (Data Science) | 2022 – 2026 | CGPA: 7.12</div>
+            <div class="timeline-desc">Specialized in data-driven computing, machine learning algorithms, web technologies, and object-oriented programming. DBATU affiliated university.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-title">Fetch.ai Club — Technical Event Coordinator</div>
+            <div class="timeline-meta">Extracurricular | 2022 – Present</div>
+            <div class="timeline-desc">Core team contributor organizing workshops, hackathons, and technical seminars. Managed logistics, volunteer allocation, and participant coordination for department-level tech events.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-title">Jaihind Junior College, Dhule</div>
+            <div class="timeline-meta">HSC (12th) — Science Stream | 2022</div>
+            <div class="timeline-desc"></div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-title">Jaihind Highschool, Dhule</div>
+            <div class="timeline-meta">SSC (10th) | 2020</div>
+            <div class="timeline-desc"></div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- ────────────────────── RESUMIND AI PANEL ────────────────────── -->
+  <div class="tab-panel" id="panel-tool" role="tabpanel" aria-labelledby="tab-tool">
+    <div class="container">
+      <div id="analyzer-mount"></div>
+    </div>
+  </div>
+
+  <!-- ────────────────────── ATS RESUME PANEL ────────────────────── -->
+  <div class="tab-panel" id="panel-resume" role="tabpanel" aria-labelledby="tab-resume">
+    <div class="container">
+      <div class="resume-embed-container">
+
+        <div class="resume-toolbar">
+          <div>
+            <h3>ATS-Optimized 1-Page Resume</h3>
+            <p>Professional A4 layout — click "Print / Save as PDF" to export</p>
+          </div>
+          <div class="toolbar-actions">
+            <button class="secondary-btn" id="open-resume-fullpage">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Open in New Tab
+            </button>
+            <button class="primary-btn" id="print-resume-btn">
+              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+              Print / Save as PDF
+            </button>
+          </div>
+        </div>
+
+        <div class="resume-frame-wrapper">
+          <iframe
+            id="resume-iframe"
+            class="resume-iframe"
+            src="./resume/resume_print.html"
+            title="Kalyani Vilas Deshmukh — ATS Resume"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        Crafted with ❤️ by <strong>Kalyani Vilas Deshmukh</strong> · Frontend engineered using
+        <a href="https://antigravity.dev" target="_blank">Google Antigravity IDE</a>
+      </p>
+      <p style="margin-top: 8px; color: var(--text-muted);">
+        <a href="https://linkedin.com/in/kalyani-deshmukh-457031313" target="_blank">LinkedIn</a> ·
+        <a href="https://github.com/KalyaniDeshmukh-maker" target="_blank">GitHub</a> ·
+        <a href="mailto:kalyanid532@gmail.com">kalyanid532@gmail.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- App Script -->
+  <script type="module" src="./src/app.js"></script>
+
+  <!-- Inline bootstrap for nav buttons that switch tabs from non-nav contexts -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Allow buttons with data-tab inside content panels to switch tabs
+      document.querySelectorAll('button[data-tab]:not(.nav-btn)').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelector(`.nav-btn[data-tab="${btn.dataset.tab}"]`)?.click();
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

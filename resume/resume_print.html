@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalyani Vilas Deshmukh - Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #1e293b;
+      --text: #334155;
+      --accent: #2563eb;
+      --border: #e2e8f0;
+      --subtext: #64748b;
+      --bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      color: var(--text);
+      background-color: #f1f5f9;
+      line-height: 1.35;
+      font-size: 10pt;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Print action bar at top on screen */
+    .screen-controls {
+      background: #0f172a;
+      color: white;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .screen-controls h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f8fafc;
+    }
+    .screen-controls .btn-group {
+      display: flex;
+      gap: 12px;
+    }
+    .print-btn {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .print-btn:hover {
+      background: #1d4ed8;
+    }
+    .back-btn {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .back-btn:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
+    /* Resume container */
+    .resume-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    .resume-page {
+      background: var(--bg);
+      width: 210mm;
+      min-height: 297mm;
+      padding: 16mm 18mm;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border-radius: 2px;
+      color: var(--primary);
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid var(--primary);
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20pt;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #0f172a;
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+    .header .subtitle {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 2px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+      font-size: 8.8pt;
+      color: var(--secondary);
+    }
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .contact-item a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .contact-divider {
+      color: #cbd5e1;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 11px;
+    }
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1.2px solid #cbd5e1;
+      padding-bottom: 2px;
+      margin-bottom: 6px;
+    }
+
+    /* Summary */
+    .summary-text {
+      font-size: 8.8pt;
+      line-height: 1.35;
+      color: var(--text);
+      text-align: justify;
+    }
+
+    /* Education & Projects */
+    .item {
+      margin-bottom: 7px;
+    }
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .item-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .item-subtitle {
+      font-size: 9pt;
+      font-weight: 500;
+      color: var(--subtext);
+      font-style: italic;
+    }
+    .item-date {
+      font-size: 8.8pt;
+      font-weight: 600;
+      color: var(--subtext);
+      white-space: nowrap;
+    }
+    .item-tech {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 1px;
+    }
+
+    /* Bullet lists */
+    ul.bullet-list {
+      list-style-type: none;
+      padding-left: 0;
+      margin-top: 3px;
+    }
+    ul.bullet-list li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 8.8pt;
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    ul.bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 3px;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    ul.bullet-list li strong {
+      color: #0f172a;
+      font-weight: 600;
+    }
+
+    /* Skills grid */
+    .skills-block {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      row-gap: 3px;
+      font-size: 8.8pt;
+    }
+    .skills-category {
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .skills-list {
+      color: var(--text);
+    }
+
+    /* Two column grid for Education/Activities */
+    .edu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        background: none;
+      }
+      .screen-controls {
+        display: none !important;
+      }
+      .resume-wrapper {
+        padding: 0;
+      }
+      .resume-page {
+        width: 100%;
+        min-height: auto;
+        padding: 0;
+        box-shadow: none;
+      }
+      @page {
+        size: A4 portrait;
+        margin: 12mm 14mm 10mm 14mm;
+      }
+      a {
+        text-decoration: none !important;
+        color: inherit !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="screen-controls">
+    <div>
+      <h2>Kalyani Vilas Deshmukh — ATS Resume Preview</h2>
+      <span style="font-size: 0.8rem; color: #94a3b8;">1-Page ATS Standard Format (A4)</span>
+    </div>
+    <div class="btn-group">
+      <a href="../index.html" class="back-btn">← Back to Portfolio</a>
+      <button onclick="window.print()" class="print-btn">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+        Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="resume-wrapper">
+    <div class="resume-page">
+      
+      <!-- Header -->
+      <div class="header">
+        <h1>Kalyani Vilas Deshmukh</h1>
+        <div class="subtitle">B.Tech in Computer Science & Engineering (Data Science)</div>
+        <div class="contact-bar">
+          <div class="contact-item">
+            <span>📍 Shirpur, Maharashtra</span>
+          </div>
+          <span class="contact-divider">•</span>
+          <div class="contact-item">
+            <span>📞 +91 8446037591</span>
+          </div>
+          <span class="contact-divider">•</span>
+          <div class="contact-item">
+            <span>✉️ <a href="mailto:kalyanid532@gmail.com">kalyanid532@gmail.com</a></span>
+          </div>
+          <span class="contact-divider">•</span>
+          <div class="contact-item">
+            <span>🔗 <a href="https://linkedin.com/in/kalyani-deshmukh-457031313" target="_blank">linkedin.com/in/kalyani-deshmukh-457031313</a></span>
+          </div>
+          <span class="contact-divider">•</span>
+          <div class="contact-item">
+            <span>💻 <a href="https://github.com/KalyaniDeshmukh-maker" target="_blank">github.com/KalyaniDeshmukh-maker</a></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p class="summary-text">
+          Detail-oriented <strong>Computer Science & Engineering (Data Science)</strong> undergraduate with solid expertise in <strong>Machine Learning fundamentals, Data Analysis, and Modern Web Development</strong>. Experienced in designing intuitive, responsive full-stack web applications and AI-driven interfaces utilizing Google Antigravity agentic frontend engineering. Passionate about solving real-world challenges through data-driven architectures and scalable software solutions.
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div class="section">
+        <div class="section-title">Education</div>
+        <div class="edu-grid">
+          <div class="item">
+            <div class="item-header">
+              <div>
+                <span class="item-title">R. C. Patel Institute of Technology, Shirpur</span>
+                <span class="item-subtitle"> — B.Tech, CSE (Data Science)</span>
+              </div>
+              <span class="item-date">2022 – 2026 (Expected) | <strong>CGPA: 7.12</strong></span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <div>
+                <span class="item-title">Jaihind Junior College, Dhule</span>
+                <span class="item-subtitle"> — Higher Secondary Certificate (HSC - 12th)</span>
+              </div>
+              <span class="item-date">2022</span>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <div>
+                <span class="item-title">Jaihind Highschool, Dhule</span>
+                <span class="item-subtitle"> — Secondary School Certificate (SSC - 10th)</span>
+              </div>
+              <span class="item-date">2020</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Technical Skills -->
+      <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-block">
+          <div class="skills-category">Languages:</div>
+          <div class="skills-list">Python, JavaScript (ES6+), C Programming, SQL</div>
+
+          <div class="skills-category">Frontend & Web:</div>
+          <div class="skills-list">HTML5, CSS3, Modern UI/UX, Glassmorphism, Responsive Design, REST APIs</div>
+
+          <div class="skills-category">Data Science & AI:</div>
+          <div class="skills-list">NumPy, Pandas, Scikit-Learn Basics, Chart.js, Prompt Engineering & Antigravity IDE</div>
+
+          <div class="skills-category">Tools & Systems:</div>
+          <div class="skills-list">Git, GitHub, VS Code, Arduino IDE, ESP32 Basics, Chrome DevTools</div>
+
+          <div class="skills-category">Core Concepts:</div>
+          <div class="skills-list">Data Structures, Object-Oriented Programming (OOP), DBMS, ATS Optimization</div>
+        </div>
+      </div>
+
+      <!-- Key Projects -->
+      <div class="section">
+        <div class="section-title">Key Projects</div>
+
+        <!-- Project 1 -->
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">ResuMind AI — Resume & Skill Gap Intelligence Platform</span>
+            <span class="item-date">2024</span>
+          </div>
+          <div class="item-tech">Tech: JavaScript (ES6+), Modern CSS3 Design System, REST API Architecture, Chart.js, Antigravity</div>
+          <ul class="bullet-list">
+            <li>Built an interactive, intelligent web application evaluating resume text against job descriptions, calculating real-time <strong>ATS compatibility scores</strong>, keyword density, and missing skill sets.</li>
+            <li>Engineered a responsive, <strong>Glassmorphic frontend using Antigravity</strong> with dynamic score gauges, interactive skill radar charts, and an automated STAR-method bullet point enhancer.</li>
+            <li>Implemented modular client-side text processing, asynchronous mock REST API services with error-handling skeletons, and 1-click A4 PDF export.</li>
+          </ul>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">Smart IoT Environmental Monitoring & Data Dashboard</span>
+            <span class="item-date">2024</span>
+          </div>
+          <div class="item-tech">Tech: ESP32 / Arduino, C/C++, Embedded Sensors, HTML5, CSS3, JavaScript</div>
+          <ul class="bullet-list">
+            <li>Configured an <strong>ESP32 microcontroller</strong> connected with multi-sensor arrays to capture real-time temperature, humidity, and atmospheric metrics.</li>
+            <li>Constructed a lightweight browser dashboard rendering real-time telemetry streams, threshold alerts, and historical data charts.</li>
+          </ul>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="item">
+          <div class="item-header">
+            <span class="item-title">Number Guessing Game — Interactive Web Application</span>
+            <span class="item-date">2023</span>
+          </div>
+          <div class="item-tech">Tech: HTML5, CSS3, JavaScript</div>
+          <ul class="bullet-list">
+            <li>Ported a legacy C-based number guessing logic into a modern, browser-based web application with dark-mode aesthetic.</li>
+            <li>Engineered input sanitization algorithms to prevent illegal inputs without consuming user attempts; integrated hint mechanisms and dynamic score states.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Leadership & Extracurricular -->
+      <div class="section">
+        <div class="section-title">Leadership & Co-Curricular Activities</div>
+        <ul class="bullet-list">
+          <li><strong>Fetch.ai Club & Technical Event Coordination</strong>: Active team contributor organizing college workshops, seminars, and technical hackathons.</li>
+          <li><strong>Project Competitions & Technical Presentations</strong>: Collaborated with multidisciplinary teams in project presentations and hackathons.</li>
+          <li><strong>Event Management & Volunteering</strong>: Coordinated logistics, participant registrations, and resource management for college technical and cultural events.</li>
+        </ul>
+      </div>
+
+      <!-- Soft Skills -->
+      <div class="section" style="margin-bottom: 0;">
+        <div class="section-title">Soft Skills & Personal Interests</div>
+        <div class="skills-block">
+          <div class="skills-category">Soft Skills:</div>
+          <div class="skills-list">Analytical Problem Solving, Team Leadership, Technical Communication, Adaptability, Time Management</div>
+
+          <div class="skills-category">Interests:</div>
+          <div class="skills-list">Artificial Intelligence & LLMs, Full-Stack Web Development, Data Analytics, IoT Systems</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
